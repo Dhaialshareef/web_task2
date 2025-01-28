@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Robot Control</title>
+</head>
+<body>
+    <h1>Control Robot Movement</h1>
+    <button onclick="moveRobot('forward')">Move Forward</button>
+    <button onclick="moveRobot('backward')">Move Backward</button>
+    <button onclick="moveRobot('left')">Turn Left</button>
+    <button onclick="moveRobot('right')">Turn Right</button>
+    <button onclick="moveRobot('stop')">Stop</button>
+
+    <script>
+        function moveRobot(direction) {
+            fetch('save_direction.php?direction=' + direction)
+                .then(response => response.text())
+                .then(data => console.log(data));
+        }
+    </script>
+</body>
+</html>
